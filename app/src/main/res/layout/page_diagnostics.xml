@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/diagnosticsPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:visibility="invisible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Hero card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Current per hour" android:textColor="#94A3B8" android:textSize="12sp" />
+
+            <TextView android:id="@+id/currentDrawTextView" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginTop="4dp"
+                android:text="-419 mA/h" android:textColor="#EF4444" android:textSize="34sp" android:textStyle="bold" />
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Power" android:textColor="#94A3B8" android:textSize="10sp" />
+                    <TextView android:id="@+id/powerTextView" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="1.60 W"
+                        android:textColor="#F8FAFC" android:textSize="14sp" android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Level" android:textColor="#94A3B8" android:textSize="10sp" />
+                    <TextView android:id="@+id/capacityTextView" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="44 %"
+                        android:textColor="#10B981" android:textSize="14sp" android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Voltage" android:textColor="#94A3B8" android:textSize="10sp" />
+
+                    <TextView android:id="@+id/voltageTextView" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="3.82 V"
+                        android:textColor="#F8FAFC" android:textSize="14sp" android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Temp" android:textColor="#94A3B8" android:textSize="10sp" />
+
+                    <TextView android:id="@+id/tempTextView" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="36.5 °C"
+                        android:textColor="#F8FAFC" android:textSize="14sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:text="Current (mA) &amp; Power (W) · 30m TimeFrame"
+            android:textColor="#CBD5E1" android:textSize="12sp" android:textStyle="bold" />
+
+        <com.syntax.batteryproject.GraphView
+            android:id="@+id/graphView"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="8dp"
+            android:background="#0B111E" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Tap the timeline to inspect mA &amp; W at each time"
+            android:textColor="#64748B" android:textSize="10sp" />
+
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="14dp" android:background="@drawable/bg_card"
+            android:orientation="vertical" android:padding="16dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Battery specs" android:textColor="#F8FAFC"
+                android:textSize="14sp" android:textStyle="bold" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:orientation="horizontal" android:weightSum="2">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp" android:layout_weight="1"
+                    android:background="@drawable/subcard" android:orientation="vertical" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Charging" android:textColor="#94A3B8" android:textSize="11sp" />
+                    <TextView android:id="@+id/chargingTechTextView" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Fast / QC"
+                        android:textColor="#7DD3FC" android:textSize="15sp" android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp" android:layout_weight="1"
+                    android:background="@drawable/subcard" android:orientation="vertical" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Health" android:textColor="#94A3B8" android:textSize="11sp" />
+                    <TextView android:id="@+id/healthTextView" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Good"
+                        android:textColor="#7DD3FC" android:textSize="15sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:orientation="horizontal" android:weightSum="2">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp" android:layout_weight="1"
+                    android:background="@drawable/subcard" android:orientation="vertical" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Cycles" android:textColor="#94A3B8" android:textSize="11sp" />
+                    <TextView android:id="@+id/cycleCountTextView" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="—"
+                        android:textColor="#7DD3FC" android:textSize="15sp" android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp" android:layout_weight="1"
+
+                    android:background="@drawable/subcard" android:orientation="vertical" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Capacity" android:textColor="#94A3B8" android:textSize="11sp" />
+
+                    <TextView android:id="@+id/designCapacityTextView" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="4000 mAh"
+                        android:textColor="#7DD3FC" android:textSize="15sp" android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Learnt from your usage"
+                android:textColor="#F8FAFC"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/trendSummaryTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="3dp"
+                android:text="Building history…"
+                android:textColor="#94A3B8"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

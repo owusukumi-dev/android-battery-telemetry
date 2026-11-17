@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/overviewPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Battery"
+                android:textColor="#94A3B8"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/overviewBatteryPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="44%"
+                android:textColor="#10B981"
+                android:textSize="52sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:id="@+id/overviewStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Discharging"
+                android:textColor="#94A3B8"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/overviewTimeLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="~3 h 42 m remaining"
+                android:textColor="#F8FAFC"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/overviewBatteryBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="14dp"
+                android:max="100"
+                android:progress="44"
+                android:progressBackgroundTint="#1E293B"
+                android:progressTint="#10B981" />
+        </LinearLayout>
+
+        <!-- Metric chips -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_chip"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Temperature" android:textColor="#94A3B8" android:textSize="11sp" />
+
+                <TextView android:id="@+id/overviewTempChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                    android:text="39.1 °C" android:textColor="#F8FAFC" android:textSize="16sp" android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_chip"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Voltage" android:textColor="#94A3B8" android:textSize="11sp" />
+                <TextView android:id="@+id/overviewVoltageChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                    android:text="3.82 V" android:textColor="#F8FAFC" android:textSize="16sp" android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_chip"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Current" android:textColor="#94A3B8" android:textSize="11sp" />
+                <TextView android:id="@+id/overviewCurrentChip" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                    android:text="-820 mA/h" android:textColor="#F8FAFC" android:textSize="16sp" android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What's using your battery?"
+                android:textColor="#F8FAFC"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Ranked by screen time, data use, and category"
+                android:textColor="#64748B"
+                android:textSize="11sp" />
+
+            <!-- Row 1 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="14dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:id="@+id/overviewApp1Icon" android:layout_width="32dp" android:layout_height="32dp"
+                    android:src="@android:drawable/sym_def_app_icon" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp" android:layout_weight="1" android:orientation="vertical">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView android:id="@+id/overviewApp1Name" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:ellipsize="end" android:maxLines="1"
+                            android:text="Instagram" android:textColor="#F8FAFC" android:textSize="13sp" />
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:gravity="end">
+                            <TextView android:id="@+id/overviewApp1Percent" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:text="42%"
+                                android:textColor="#EF4444" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/overviewApp1Why" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:layout_marginTop="1dp"
+                                android:text="23 m · 12 MB" android:textColor="#64748B" android:textSize="10sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <ProgressBar android:id="@+id/overviewApp1Progress" style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent" android:layout_height="4dp" android:layout_marginTop="6dp"
+                        android:max="100" android:progress="42" android:progressBackgroundTint="#334155" android:progressTint="#EF4444" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 2 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="14dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:id="@+id/overviewApp2Icon" android:layout_width="32dp" android:layout_height="32dp"
+                    android:src="@android:drawable/sym_def_app_icon" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp" android:layout_weight="1" android:orientation="vertical">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView android:id="@+id/overviewApp2Name" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:ellipsize="end" android:maxLines="1"
+                            android:text="WhatsApp" android:textColor="#F8FAFC" android:textSize="13sp" />
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:gravity="end">
+                            <TextView android:id="@+id/overviewApp2Percent" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:text="28%"
+                                android:textColor="#F59E0B" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/overviewApp2Why" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:layout_marginTop="1dp"
+                                android:text="15 m · 4 MB" android:textColor="#64748B" android:textSize="10sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <ProgressBar android:id="@+id/overviewApp2Progress" style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent" android:layout_height="4dp" android:layout_marginTop="6dp"
+                        android:max="100" android:progress="28" android:progressBackgroundTint="#334155" android:progressTint="#F59E0B" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 3 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="14dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <ImageView android:id="@+id/overviewApp3Icon" android:layout_width="32dp" android:layout_height="32dp"
+                    android:src="@android:drawable/sym_def_app_icon" />
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp" android:layout_weight="1" android:orientation="vertical">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView android:id="@+id/overviewApp3Name" android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:ellipsize="end" android:maxLines="1"
+                            android:text="Maps" android:textColor="#F8FAFC" android:textSize="13sp" />
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:gravity="end">
+                            <TextView android:id="@+id/overviewApp3Percent" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:text="15%"
+                                android:textColor="#10B981" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/overviewApp3Why" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:layout_marginTop="1dp"
+                                android:text="8 m · 2 MB" android:textColor="#64748B" android:textSize="10sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <ProgressBar android:id="@+id/overviewApp3Progress" style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent" android:layout_height="4dp" android:layout_marginTop="6dp"
+                        android:max="100" android:progress="15" android:progressBackgroundTint="#334155" android:progressTint="#10B981" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Health summary -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Health" android:textColor="#94A3B8" android:textSize="11sp" />
+                <TextView android:id="@+id/overviewHealthText" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                    android:text="Good" android:textColor="#7DD3FC" android:textSize="15sp" android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Cycles" android:textColor="#94A3B8" android:textSize="11sp" />
+                <TextView android:id="@+id/overviewCyclesText" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                    android:text="—" android:textColor="#7DD3FC" android:textSize="15sp" android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Capacity" android:textColor="#94A3B8" android:textSize="11sp" />
+                <TextView android:id="@+id/overviewCapacityText" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                    android:text="5000 mAh" android:textColor="#7DD3FC" android:textSize="15sp" android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
